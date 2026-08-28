@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Intercede Health — Your Health, Our Priority</title>
-<meta name="description" content="Registered-nurse-led in-home care and health coaching for the Manatee–Sarasota area. Proactive, dignified, affordable care from Intercede Health.">
+<meta name="description" content="Registered-Nurse-led in-home care and health coaching for the Manatee–Sarasota area. Proactive, dignified, affordable care from Intercede Health.">
 <link rel="icon" type="image/png" id="favicon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -115,16 +115,17 @@
   header.scrolled{border-bottom-color:var(--line);background:rgba(23,24,27,0.95);}
   .nav{
     display:flex;align-items:center;justify-content:space-between;
-    padding:14px 32px;max-width:1180px;margin:0 auto;
+    padding:14px 28px;max-width:1180px;margin:0 auto;
+    gap:20px;
   }
-  .brand{display:flex;align-items:center;gap:12px;}
+  .brand{display:flex;align-items:center;gap:12px;flex:none;}
   .brand img{height:42px;width:auto;}
-  .brand-word{font-family:'Fraunces',serif;font-weight:600;font-size:20px;color:var(--heading);letter-spacing:-0.01em;}
+  .brand-word{font-family:'Fraunces',serif;font-weight:600;font-size:20px;color:var(--heading);letter-spacing:-0.01em;white-space:nowrap;}
   .brand-word span{color:var(--teal-bright);}
-  nav.links{display:flex;align-items:center;gap:36px;}
+  nav.links{display:flex;align-items:center;gap:22px;flex:none;}
   nav.links a{
-    font-size:14.5px;font-weight:600;color:var(--ink-soft);
-    position:relative;padding:4px 0;
+    font-size:14px;font-weight:600;color:var(--ink-soft);
+    position:relative;padding:4px 0;white-space:nowrap;
     transition:color .25s ease;
   }
   nav.links a::after{
@@ -133,8 +134,8 @@
   }
   nav.links a:hover{color:var(--teal-bright);}
   nav.links a:hover::after{width:100%;}
-  .nav-cta{display:flex;align-items:center;gap:18px;}
-  .nav-phone{font-size:14px;font-weight:700;color:var(--teal-bright);display:flex;align-items:center;gap:8px;}
+  .nav-cta{display:flex;align-items:center;gap:16px;flex:none;}
+  .nav-phone{font-size:14px;font-weight:700;color:var(--teal-bright);display:flex;align-items:center;gap:6px;white-space:nowrap;}
   .burger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
   .burger span{display:block;width:24px;height:2px;background:var(--heading);margin:5px 0;border-radius:2px;}
   .mobile-panel{
@@ -177,9 +178,13 @@
     box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;
     font-size:13px;font-weight:700;color:var(--teal-deep);
     animation:bob 6s ease-in-out infinite;
+    text-decoration:none;cursor:pointer;
+    transition:transform .3s ease, box-shadow .3s ease;
   }
-  .float-card.c1{top:6%;left:-4%;animation-delay:.2s;}
-  .float-card.c2{bottom:10%;right:-6%;animation-delay:1.4s;}
+  .float-card:hover{animation-play-state:paused;transform:translateY(-3px);box-shadow:0 24px 50px -20px rgba(0,0,0,0.55);}
+  .float-card.c1{top:8%;left:-4%;animation-delay:.2s;}
+  .float-card.c3{top:44%;right:-9%;animation-delay:.8s;}
+  .float-card.c2{top:80%;left:-6%;animation-delay:1.4s;}
   .float-card .ic{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex:none;}
   @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
 
@@ -240,8 +245,11 @@
   .coach-top{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:76px;}
   .coach-top h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:18px;}
   .coach-top p{color:var(--ink-soft);font-size:16.5px;margin-bottom:14px;}
-  .coach-visual{position:relative;aspect-ratio:4/3;}
-  .coach-visual svg{width:100%;height:100%;}
+  .coach-visual{
+    position:relative;aspect-ratio:3/4;
+    display:flex;align-items:center;justify-content:center;padding:4%;
+  }
+  .coach-visual svg{width:100%;height:100%;max-width:320px;filter:drop-shadow(0 18px 30px rgba(0,0,0,0.4));}
 
   .pillar-cluster{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
   .leaf-card{
@@ -296,19 +304,14 @@
   /* ---------- ABOUT / FOUNDER ---------- */
   .about{background:var(--cream);padding:110px 0;}
   .about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:70px;align-items:center;}
-  .founder-art{position:relative;aspect-ratio:3/4;border-radius:26px;overflow:hidden;
-    background:
-      radial-gradient(120% 90% at 30% 15%, rgba(20,163,174,0.35), transparent 60%),
-      radial-gradient(90% 70% at 85% 90%, rgba(242,151,29,0.18), transparent 65%),
-      var(--paper);
-    border:1px solid var(--line);
-    display:flex;align-items:center;justify-content:center;padding:14%;
+  .founder-art{position:relative;aspect-ratio:3/4;
+    display:flex;align-items:center;justify-content:center;padding:6%;
   }
   .founder-art img{position:relative;width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 18px 30px rgba(0,0,0,0.45));}
   .founder-caption{
-    position:absolute;left:24px;right:24px;bottom:24px;
-    background:rgba(10,63,69,0.65);backdrop-filter:blur(6px);
-    border-radius:14px;padding:16px 20px;color:#fff;
+    position:absolute;left:0;right:0;bottom:0;
+    background:linear-gradient(to top, rgba(10,20,21,0.92) 0%, rgba(10,20,21,0.75) 45%, transparent 100%);
+    padding:44px 24px 20px;color:#fff;
   }
   .founder-caption strong{font-family:'Fraunces',serif;font-size:18px;display:block;}
   .founder-caption span{font-size:13px;color:#d7ece9;}
@@ -413,10 +416,12 @@
     .float-card{animation:none;}
   }
 
-  @media (max-width:980px){
+  @media (max-width:1200px){
     nav.links,.nav-phone{display:none;}
     .nav-cta .btn-primary{display:none;}
     .burger{display:block;}
+  }
+  @media (max-width:980px){
     .hero-grid{grid-template-columns:1fr;}
     .hero-art{max-width:420px;margin:40px auto 0;}
     .pillars-two{grid-template-columns:1fr;}
@@ -497,18 +502,24 @@
         <div class="logo-panel">
           <img class="site-logo" alt="Intercede Health logo — a tree of colorful leaves rising into a phoenix, above a teal wave">
         </div>
-        <div class="float-card c1">
-          <div class="ic" style="background:#eaf7f5;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.6 8.9 2.4 5 6 5c2 0 3.3 1.1 4 2.3C10.7 6.1 12 5 14 5c3.6 0 5.4 3.9 3.5 7.5C19 16.65 12 21 12 21z" fill="#0e7f8a"/></svg>
-          </div>
-          RN Home Visits
-        </div>
-        <div class="float-card c2">
+        <a href="#health-coaching" class="float-card c1">
           <div class="ic" style="background:#fdf1e6;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4L12 2z" fill="#f2971d"/></svg>
           </div>
           1:1 Health Coaching
-        </div>
+        </a>
+        <a href="#in-home-care" class="float-card c2">
+          <div class="ic" style="background:#eaf7f5;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-9.5-8.5C.6 8.9 2.4 5 6 5c2 0 3.3 1.1 4 2.3C10.7 6.1 12 5 14 5c3.6 0 5.4 3.9 3.5 7.5C19 16.65 12 21 12 21z" fill="#0e7f8a"/></svg>
+          </div>
+          RN Home Visits
+        </a>
+        <a href="#employers" class="float-card c3">
+          <div class="ic" style="background:#fdeef4;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 8V6a3 3 0 0 1 3-3h0a3 3 0 0 1 3 3v2" stroke="#d81e6c" stroke-width="1.8" fill="none" stroke-linecap="round"/><rect x="4" y="8" width="16" height="11" rx="2.5" stroke="#d81e6c" stroke-width="1.8" fill="none"/><path d="M4 13h16" stroke="#d81e6c" stroke-width="1.8"/></svg>
+          </div>
+          Employer Wellness Plans
+        </a>
       </div>
     </div>
 
@@ -557,28 +568,58 @@
         <div class="reveal">
           <div class="eyebrow">Health Coaching</div>
           <h2>Tired of failing at lasting change?</h2>
-          <p>Are you facing a health crisis? Have you struggled to achieve lasting changes? Don't lose hope! Many people fail to make positive lifestyle changes because they fail to address the root causes of their issues. Often, health challenges arise from deep psychological and spiritual deficiencies. By addressing these first, we pave the way for lasting transformation.</p>
+          <p>Are you facing a health crisis? Have you struggled to achieve lasting changes? Don't lose hope! Many people fail to make positive lifestyle changes because they fail to address the root causes of their issues. Often, health challenges arise from poor emotional and spiritual habits. By addressing these first, we pave the way for lasting transformation.</p>
           <p>Our Registered Nurse Health Coach works with you 1 on 1, grounded in the six pillars of health: social connection, restorative sleep, stress management, avoidance of risky substances, physical fitness, and nutrition.</p>
           <a href="#contact" class="btn btn-primary" style="margin-top:12px;">Start Coaching</a>
         </div>
         <div class="coach-visual reveal">
-          <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="200" cy="150" r="120" fill="#eaf7f5"/>
-            <g stroke-width="5" stroke-linecap="round" fill="none">
-              <path d="M200 150 L200 70" stroke="#0e7f8a"/>
-              <path d="M200 150 L266 110" stroke="#d81e6c"/>
-              <path d="M200 150 L266 190" stroke="#f2971d"/>
-              <path d="M200 150 L200 230" stroke="#8ac640"/>
-              <path d="M200 150 L134 190" stroke="#ffb534"/>
-              <path d="M200 150 L134 110" stroke="#14a3ae"/>
+          <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="personGrad" gradientUnits="userSpaceOnUse" x1="0" y1="380" x2="0" y2="0">
+                <stop offset="0%" stop-color="#0e7f8a"/>
+                <stop offset="45%" stop-color="#1cb4c0"/>
+                <stop offset="78%" stop-color="#f2971d"/>
+                <stop offset="100%" stop-color="#ffb534"/>
+              </linearGradient>
+            </defs>
+
+            <!-- sunburst rays -->
+            <g stroke-linecap="round" opacity="0.55">
+              <path d="M105 55 L75 25" stroke="#f2971d" stroke-width="4"/>
+              <path d="M195 55 L225 25" stroke="#f2971d" stroke-width="4"/>
+              <path d="M70 90 L30 75" stroke="#14a3ae" stroke-width="4"/>
+              <path d="M230 90 L270 75" stroke="#14a3ae" stroke-width="4"/>
             </g>
-            <circle cx="200" cy="150" r="16" fill="#0a3f45"/>
-            <circle cx="200" cy="70" r="12" fill="#0e7f8a"/>
-            <circle cx="266" cy="110" r="12" fill="#d81e6c"/>
-            <circle cx="266" cy="190" r="12" fill="#f2971d"/>
-            <circle cx="200" cy="230" r="12" fill="#8ac640"/>
-            <circle cx="134" cy="190" r="12" fill="#ffb534"/>
-            <circle cx="134" cy="110" r="12" fill="#14a3ae"/>
+
+            <!-- sparkle accents -->
+            <circle cx="45" cy="55" r="6" fill="#d81e6c"/>
+            <circle cx="255" cy="60" r="5" fill="#8ac640"/>
+            <circle cx="35" cy="110" r="4" fill="#ffb534"/>
+            <circle cx="265" cy="120" r="4.5" fill="#d81e6c"/>
+
+            <!-- ground shadow -->
+            <ellipse cx="150" cy="358" rx="55" ry="9" fill="#0e7f8a" opacity="0.18"/>
+
+            <!-- figure: confident stance, flexing both arms, smiling -->
+            <path d="M150 185 L118 345" stroke="url(#personGrad)" stroke-width="30" stroke-linecap="round"/>
+            <path d="M150 185 L182 345" stroke="url(#personGrad)" stroke-width="30" stroke-linecap="round"/>
+            <path d="M150 95 L150 190" stroke="url(#personGrad)" stroke-width="36" stroke-linecap="round"/>
+
+            <!-- left arm: flex -->
+            <path d="M128 100 L80 120" stroke="url(#personGrad)" stroke-width="24" stroke-linecap="round"/>
+            <path d="M80 120 L100 58" stroke="url(#personGrad)" stroke-width="22" stroke-linecap="round"/>
+            <circle cx="88" cy="108" r="17" fill="url(#personGrad)"/>
+            <circle cx="101" cy="52" r="15" fill="url(#personGrad)"/>
+
+            <!-- right arm: flex -->
+            <path d="M172 100 L220 120" stroke="url(#personGrad)" stroke-width="24" stroke-linecap="round"/>
+            <path d="M220 120 L200 58" stroke="url(#personGrad)" stroke-width="22" stroke-linecap="round"/>
+            <circle cx="212" cy="108" r="17" fill="url(#personGrad)"/>
+            <circle cx="199" cy="52" r="15" fill="url(#personGrad)"/>
+
+            <!-- head + smile -->
+            <circle cx="150" cy="55" r="30" fill="url(#personGrad)"/>
+            <path d="M136 62 Q150 74 164 62" stroke="#0a3f45" stroke-width="4" fill="none" stroke-linecap="round"/>
           </svg>
         </div>
       </div>
@@ -630,7 +671,7 @@
         <h2>A healthier team is a stronger business</h2>
         <p>The cost of health care is rising, health plans are unaffordable, and the current health care system often fails to improve your employees' lives. Intercede Health offers an innovative alternative or adjunct to traditional health plans.</p>
         <p>Our services include RN Health Coaching, a 24/7 Nurse Support Line, and referrals to community services — giving your employees direct access to trusted guidance whenever they need it.</p>
-        <p>By providing this benefit to your employees, you're giving them evidence-based tools to improve their health. As their employer, you can experience the benefit of fewer call-offs, increased productivity, and improved employee health.</p>
+        <p>By providing this benefit to your employees, you're giving them evidence-based tools to improve their health. As their employer, you can experience the benefit of fewer call-offs, increased productivity, improved employee health, and a stronger company culture and atmosphere.</p>
         <p>With tiered, custom-tailored plans to meet your needs, we have something to offer every business — great and small.</p>
         <a href="#contact" class="btn btn-light">Talk to Us About Employer Plans</a>
       </div>
@@ -664,6 +705,13 @@
             <span>Built to fit businesses of any size</span>
           </div>
         </div>
+        <div class="employer-stat">
+          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="9" r="3" stroke="#fff" stroke-width="1.8"/><circle cx="17" cy="9" r="3" stroke="#fff" stroke-width="1.8"/><path d="M2 20c0-3 2.5-5 6-5s6 2 6 5M12 20c0-2.5 2-4.5 5-4.5s5 2 5 4.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          <div>
+            <strong>Stronger Company Culture</strong>
+            <span>A healthier, more connected atmosphere</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -674,7 +722,7 @@
       <div class="intro-head reveal" style="margin-left:0;text-align:left;max-width:640px;">
         <div class="eyebrow">In-Home Care</div>
         <h2>Comfort, dignity, and care — at home</h2>
-        <p>Our registered nurse brings over 15 years of experience in neurologic conditions, orthopedics, geriatric care, traumatic injuries, and post-surgical recovery directly to your door.</p>
+        <p>Our Registered Nurse brings over 15 years of experience in neurologic conditions, orthopedics, geriatric care, traumatic injuries, and post-surgical recovery directly to your door.</p>
       </div>
 
       <div class="svc-grid">
@@ -710,8 +758,8 @@
           <div class="svc-dot" style="background:rgba(255,181,52,0.22);">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#ffd27a" stroke-width="2" fill="none"/><path d="M12 7v5l3 3" stroke="#ffd27a" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
-          <h4>Case Management</h4>
-          <p>Making sure you use every benefit available through your insurance and community — appointments coordinated and referrals handled for you.</p>
+          <h4>Case Management &amp; Advocacy</h4>
+          <p>We make sure you use every benefit available through insurance and community resources, and if a loved one isn't getting the care they deserve, we advocate on your behalf to make sure they're heard.</p>
         </div>
         <div class="svc-card reveal">
           <div class="svc-dot" style="background:rgba(216,30,108,0.18);">
@@ -719,18 +767,6 @@
           </div>
           <h4>Palliative Care</h4>
           <p>A palliative-trained RN builds a care plan centered on quality of life — comfort, clarity, and support for you and your family.</p>
-        </div>
-      </div>
-
-      <div class="svc-card reveal" style="margin-top:22px;padding:30px 32px;">
-        <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;">
-          <div class="svc-dot" style="background:rgba(255,181,52,0.2);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.8 1.4 6.8L12 17.7 6 20.7l1.4-6.8L2.2 9.1l6.9-.8L12 2z" fill="#ffd27a"/></svg>
-          </div>
-          <div>
-            <h4 style="margin-bottom:8px;">Advocacy</h4>
-            <p style="max-width:640px;">Worried a loved one isn't getting the care they deserve? With a background in hospital administration and deep knowledge of health-system rules, we advocate on your behalf to make sure they're heard.</p>
-          </div>
         </div>
       </div>
     </div>
@@ -758,6 +794,7 @@
             <div><strong>15+</strong><span>Years in healthcare</span></div>
             <div><strong>1:1</strong><span>Personalized RN care</span></div>
             <div><strong>FL</strong><span>Manatee–Sarasota area</span></div>
+            <div><strong>Virtual</strong><span>Available anywhere</span></div>
           </div>
         </div>
       </div>
@@ -779,7 +816,7 @@
       <div class="contact-copy reveal">
         <div class="eyebrow" style="color:var(--gold);">Get In Touch</div>
         <h2>Let's talk about your care.</h2>
-        <p>Reach out for a free consultation, or call directly — our registered nurse is ready to help you or a loved one get started.</p>
+        <p>Reach out for a free consultation, or call directly — our Registered Nurse is ready to help you or a loved one get started.</p>
 
         <div class="info-row">
           <div class="info-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z" stroke="#fff" stroke-width="1.6"/></svg></div>
@@ -876,7 +913,7 @@
         <img class="site-logo" width="41" height="38" alt="Intercede Health logo">
         <span>Intercede Health</span>
       </div>
-      <p>Registered-nurse-led home health care and health coaching, serving the Manatee–Sarasota area with proactive, affordable, dignified care.</p>
+      <p>Registered-Nurse-led home health care and health coaching, serving the Manatee–Sarasota area with proactive, affordable, dignified care.</p>
     </div>
     <div class="foot-col">
       <h5>Explore</h5>
