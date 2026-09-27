@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Locus of Control Assessment — Intercede Health</title>
+<meta name="description" content="Locus of Control self-assessment for Intercede Health RN Health Coaching clients.">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site-common.css">
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="nav">
+    <a href="index.html#top" class="brand">
+      <img src="logo.png" width="45" height="42" alt="Intercede Health logo — a tree of colorful leaves rising into a phoenix, above a teal wave">
+      <span class="brand-word">Intercede <span>Health</span></span>
+    </a>
+    <nav class="links">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#health-coaching">Health Coaching</a>
+      <a href="index.html#employers">For Employers</a>
+      <a href="index.html#in-home-care">In-Home Care</a>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:19417205954" class="nav-phone">941-720-5954</a>
+      <a href="index.html#contact" class="btn btn-primary">Schedule a Consultation</a>
+      <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href="index.html#home">Home</a>
+  <a href="index.html#health-coaching">Health Coaching</a>
+  <a href="index.html#employers">For Employers</a>
+  <a href="index.html#in-home-care">In-Home Care</a>
+  <a href="index.html#about">About Us</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="tel:19417205954" class="btn btn-primary" style="align-self:flex-start;margin-top:10px;">Call 941-720-5954</a>
+</div>
+
+<main id="top">
+
+  <section class="page-hero" style="padding-bottom:40px;">
+    <div class="wrap">
+      <div class="crumb reveal in"><a href="index.html#top">Intercede Health</a> &nbsp;/&nbsp; <a href="assessments.html">Client Assessments</a> &nbsp;/&nbsp; Locus of Control</div>
+      <h1 class="reveal in">Locus of Control Assessment</h1>
+      <p class="lead reveal in">Locus of Control refers to an individual's perception about the degree to which they believe that they have control over the outcome of events in their lives, as opposed to external forces beyond their influence. Or, more simply, do you believe that your destiny is controlled by yourself or by external forces?</p>
+    </div>
+  </section>
+
+  <section class="assess-wrap" style="padding-top:20px;">
+    <div class="wrap">
+      <form class="assess-card reveal in" id="locusForm" action="https://formspree.io/f/xyegvkga" method="POST" onsubmit="return handleAssessSubmit(event);" novalidate>
+        <div id="locusFields">
+          <h2>Locus of Control Assessment</h2>
+          <div class="assess-directions"><strong>Directions:</strong> Circle — or here, select — the answer that most reflects how you feel about each statement below.</div>
+
+          <div class="assess-client-fields">
+            <div class="field">
+              <label for="lc_name">Name</label>
+              <input id="lc_name" name="name" type="text" placeholder="Your full name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="lc_email">Email</label>
+              <input id="lc_email" name="email" type="email" placeholder="you@email.com" autocomplete="email" required>
+            </div>
+          </div>
+
+          <!-- Q1 -->
+          <div class="q-block">
+            <div class="q-text"><span class="q-num">1</span> At work, I feel I have control over what happens in most situations.</div>
+            <div class="scale-row" id="row1">
+              <label class="scale-opt"><input type="radio" name="q1" value="A" required><span><b>A</b> Strongly Disagree</span></label>
+              <label class="scale-opt"><input type="radio" name="q1" value="B"><span><b>B</b> Disagree</span></label>
+              <label class="scale-opt"><input type="radio" name="q1" value="C"><span><b>C</b> Neutral</span></label>
+              <label class="scale-opt"><input type="radio" name="q1" value="D"><span><b>D</b> Agree</span></label>
+              <label class="scale-opt"><input type="radio" name="q1" value="E"><span><b>E</b> Strongly Agree</span></label>
+            </div>
+            <div class="na-row">
+              <label><input type="checkbox" id="q1na"> Not applicable — I'm no longer working</label>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="q-block">
+            <div class="q-text"><span class="q-num">2</span> I feel what happens in my life is often determined by factors beyond my control.</div>
+            <div class="scale-row">
+              <label class="scale-opt"><input type="radio" name="q2" value="A" required><span><b>A</b> Strongly Disagree</span></label>
+              <label class="scale-opt"><input type="radio" name="q2" value="B"><span><b>B</b> Disagree</span></label>
+              <label class="scale-opt"><input type="radio" name="q2" value="C"><span><b>C</b> Neutral</span></label>
+              <label class="scale-opt"><input type="radio" name="q2" value="D"><span><b>D</b> Agree</span></label>
+              <label class="scale-opt"><input type="radio" name="q2" value="E"><span><b>E</b> Strongly Agree</span></label>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="q-block">
+            <div class="q-text"><span class="q-num">3</span> Over the next 5–10 years, I expect to have more positive than negative experiences.</div>
+            <div class="scale-row">
+              <label class="scale-opt"><input type="radio" name="q3" value="A" required><span><b>A</b> Strongly Disagree</span></label>
+              <label class="scale-opt"><input type="radio" name="q3" value="B"><span><b>B</b> Disagree</span></label>
+              <label class="scale-opt"><input type="radio" name="q3" value="C"><span><b>C</b> Neutral</span></label>
+              <label class="scale-opt"><input type="radio" name="q3" value="D"><span><b>D</b> Agree</span></label>
+              <label class="scale-opt"><input type="radio" name="q3" value="E"><span><b>E</b> Strongly Agree</span></label>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="q-block">
+            <div class="q-text"><span class="q-num">4</span> I often have the feeling I am being treated unfairly.</div>
+            <div class="scale-row">
+              <label class="scale-opt"><input type="radio" name="q4" value="A" required><span><b>A</b> Strongly Disagree</span></label>
+              <label class="scale-opt"><input type="radio" name="q4" value="B"><span><b>B</b> Disagree</span></label>
+              <label class="scale-opt"><input type="radio" name="q4" value="C"><span><b>C</b> Neutral</span></label>
+              <label class="scale-opt"><input type="radio" name="q4" value="D"><span><b>D</b> Agree</span></label>
+              <label class="scale-opt"><input type="radio" name="q4" value="E"><span><b>E</b> Strongly Agree</span></label>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="q-block">
+            <div class="q-text"><span class="q-num">5</span> In the past 10 years my life has been full of changes without my knowing what will happen next.</div>
+            <div class="scale-row">
+              <label class="scale-opt"><input type="radio" name="q5" value="A" required><span><b>A</b> Strongly Disagree</span></label>
+              <label class="scale-opt"><input type="radio" name="q5" value="B"><span><b>B</b> Disagree</span></label>
+              <label class="scale-opt"><input type="radio" name="q5" value="C"><span><b>C</b> Neutral</span></label>
+              <label class="scale-opt"><input type="radio" name="q5" value="D"><span><b>D</b> Agree</span></label>
+              <label class="scale-opt"><input type="radio" name="q5" value="E"><span><b>E</b> Strongly Agree</span></label>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="q-block">
+            <div class="q-text"><span class="q-num">6</span> I gave up trying to make big improvements in my life a long time ago.</div>
+            <div class="scale-row">
+              <label class="scale-opt"><input type="radio" name="q6" value="A" required><span><b>A</b> Strongly Disagree</span></label>
+              <label class="scale-opt"><input type="radio" name="q6" value="B"><span><b>B</b> Disagree</span></label>
+              <label class="scale-opt"><input type="radio" name="q6" value="C"><span><b>C</b> Neutral</span></label>
+              <label class="scale-opt"><input type="radio" name="q6" value="D"><span><b>D</b> Agree</span></label>
+              <label class="scale-opt"><input type="radio" name="q6" value="E"><span><b>E</b> Strongly Agree</span></label>
+            </div>
+          </div>
+
+          <!-- hidden fields carrying the computed score to Jamie -->
+          <input type="hidden" name="score_total" id="score_total">
+          <input type="hidden" name="score_average" id="score_average">
+          <input type="hidden" name="score_category" id="score_category">
+          <input type="hidden" name="_subject" value="Locus of Control Assessment — Intercede Health">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="btn btn-primary" id="assessSubmitBtn">Submit Assessment</button>
+          <p class="field-error" id="assessError">Something went wrong sending your assessment — please call us at <a href="tel:19417205954">941-720-5954</a> or try again.</p>
+        </div>
+
+        <div class="form-success" id="assessSuccess">
+          <div class="check">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#5a9a1f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Assessment submitted</h3>
+          <p id="assessSummary">Thanks — your responses have been sent to Jamie.</p>
+          <div class="assess-result show" id="resultBox" style="text-align:left;margin-top:22px;">
+            <div class="score-row">
+              <div><strong id="resTotal">–</strong><span>Total Score</span></div>
+              <div><strong id="resAvg">–</strong><span>Average</span></div>
+            </div>
+            <p>Your category: <strong id="resCategory" style="color:var(--teal-deep);">–</strong></p>
+            <p style="margin-top:10px;">
+              Low internal locus of control = 3 or less &nbsp;·&nbsp;
+              Moderate = above 3 to 3.3 &nbsp;·&nbsp;
+              Medium = above 3.3 to 3.7 &nbsp;·&nbsp;
+              High = above 3.7
+            </p>
+          </div>
+        </div>
+      </form>
+
+      <p style="max-width:820px;margin:26px auto 0;font-size:12px;color:var(--ink-soft);line-height:1.6;">
+        Sources: Bobak M, Pikhart H, et al. "Socioeconomic Factors, Material Inequalities, and Perceived Control in Self-Rated Health: Cross-Sectional Data from Seven Post-Communist Countries." <em>Social Science and Medicine</em> 2000; 51: 1343–50. "Association of Psychosocial Risk Factors with Risk of Acute Myocardial Infarction in 11,119 Cases and 13,648 Controls from 52 Countries (the INTERHEART study): Case-Control Study." Rosengren A, Hawken S, et al. <em>The Lancet</em> 2004; 364: 953–62. Used with permission.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-wave">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C 240,60 480,0 720,25 C 960,50 1200,5 1440,30 L1440,0 L0,0 Z" style="fill:var(--cream);"/></svg>
+  </div>
+  <div class="wrap foot-main">
+    <div>
+      <div class="foot-brand">
+        <img src="logo.png" width="41" height="38" alt="Intercede Health logo">
+        <span>Intercede Health</span>
+      </div>
+      <p>Registered-Nurse-led home health care and health coaching, serving the Manatee–Sarasota area with proactive, affordable, dignified care.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Explore</h5>
+      <a href="index.html#home">Home</a>
+      <a href="index.html#health-coaching">Health Coaching</a>
+      <a href="index.html#employers">For Employers</a>
+      <a href="index.html#in-home-care">In-Home Care</a>
+      <a href="index.html#about">About Us</a>
+      <a href="assessments.html">Client Assessments</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="foot-col">
+      <h5>Connect</h5>
+      <a href="tel:19417205954">941-720-5954</a>
+      <a href="https://www.facebook.com/1221563171030757" target="_blank" rel="noopener">Facebook</a>
+      <a href="index.html#contact">Book a Consultation</a>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Intercede Health LLC. All rights reserved.</span>
+    <span>Manatee–Sarasota, Florida</span>
+  </div>
+</footer>
+
+<script src="assets/site-common.js"></script>
+<script>
+  // Allow skipping question 1 via the "not applicable" checkbox
+  const q1na = document.getElementById('q1na');
+  const row1 = document.getElementById('row1');
+  q1na.addEventListener('change', () => {
+    const radios = row1.querySelectorAll('input[type="radio"]');
+    radios.forEach(r => {
+      if (q1na.checked) {
+        r.checked = false;
+        r.required = false;
+        r.disabled = true;
+      } else {
+        r.disabled = false;
+        r.required = true;
+      }
+    });
+    row1.style.opacity = q1na.checked ? '0.45' : '1';
+  });
+
+  const FORWARD = { A: 1, B: 2, C: 3, D: 4, E: 5 };   // items 1 & 3
+  const REVERSE = { A: 5, B: 4, C: 3, D: 2, E: 1 };   // items 2, 4, 5, 6
+  const REVERSE_ITEMS = [2, 4, 5, 6];
+
+  function computeScore(form) {
+    let sum = 0, count = 0;
+    for (let i = 1; i <= 6; i++) {
+      if (i === 1 && q1na.checked) continue;
+      const checked = form.querySelector(`input[name="q${i}"]:checked`);
+      if (!checked) return null;
+      const pts = REVERSE_ITEMS.includes(i) ? REVERSE[checked.value] : FORWARD[checked.value];
+      sum += pts;
+      count++;
+    }
+    const avg = sum / count;
+    let category;
+    if (avg <= 3) category = 'Low internal locus of control';
+    else if (avg <= 3.3) category = 'Moderate internal locus of control';
+    else if (avg <= 3.7) category = 'Medium locus of control';
+    else category = 'High locus of control';
+    return { sum, avg: Math.round(avg * 100) / 100, category };
+  }
+
+  function handleAssessSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return false;
+    }
+
+    const result = computeScore(form);
+    if (!result) {
+      alert('Please answer every question before submitting (or mark Question 1 as not applicable).');
+      return false;
+    }
+
+    document.getElementById('score_total').value = result.sum;
+    document.getElementById('score_average').value = result.avg;
+    document.getElementById('score_category').value = result.category;
+
+    const name = document.getElementById('lc_name').value.trim();
+    const btn = document.getElementById('assessSubmitBtn');
+    const errorNote = document.getElementById('assessError');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    if (errorNote) errorNote.style.display = 'none';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error('submission failed');
+
+        document.getElementById('assessSummary').textContent =
+          `Thanks, ${name}! Your responses have been sent to Jamie.`;
+        document.getElementById('resTotal').textContent = result.sum;
+        document.getElementById('resAvg').textContent = result.avg;
+        document.getElementById('resCategory').textContent = result.category;
+
+        document.getElementById('locusFields').style.display = 'none';
+        document.getElementById('assessSuccess').classList.add('show');
+      })
+      .catch(() => {
+        btn.disabled = false;
+        btn.textContent = 'Submit Assessment';
+        if (errorNote) {
+          errorNote.style.display = 'block';
+        } else {
+          alert('Something went wrong sending your assessment — please call us at 941-720-5954 or try again.');
+        }
+      });
+
+    return false;
+  }
+</script>
+</body>
+</html>

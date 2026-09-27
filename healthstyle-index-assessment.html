@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HealthStyle Index (HSI) — Intercede Health</title>
+<meta name="description" content="HealthStyle Index (HSI) self-assessment for Intercede Health RN Health Coaching clients.">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site-common.css">
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="nav">
+    <a href="index.html#top" class="brand">
+      <img src="logo.png" width="45" height="42" alt="Intercede Health logo — a tree of colorful leaves rising into a phoenix, above a teal wave">
+      <span class="brand-word">Intercede <span>Health</span></span>
+    </a>
+    <nav class="links">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#health-coaching">Health Coaching</a>
+      <a href="index.html#employers">For Employers</a>
+      <a href="index.html#in-home-care">In-Home Care</a>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:19417205954" class="nav-phone">941-720-5954</a>
+      <a href="index.html#contact" class="btn btn-primary">Schedule a Consultation</a>
+      <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href="index.html#home">Home</a>
+  <a href="index.html#health-coaching">Health Coaching</a>
+  <a href="index.html#employers">For Employers</a>
+  <a href="index.html#in-home-care">In-Home Care</a>
+  <a href="index.html#about">About Us</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="tel:19417205954" class="btn btn-primary" style="align-self:flex-start;margin-top:10px;">Call 941-720-5954</a>
+</div>
+
+<main id="top">
+
+  <section class="page-hero" style="padding-bottom:40px;">
+    <div class="wrap">
+      <div class="crumb reveal in"><a href="index.html#top">Intercede Health</a> &nbsp;/&nbsp; <a href="assessments.html">Client Assessments</a> &nbsp;/&nbsp; HealthStyle Index</div>
+      <h1 class="reveal in">HealthStyle Index (HSI)</h1>
+      <p class="lead reveal in">Based on Healthy People goals. For each health indicator below, choose the answer that best describes you. It's a long one — 28 questions — but each answer is quick to pick.</p>
+    </div>
+  </section>
+
+  <section class="assess-wrap" style="padding-top:20px;">
+    <div class="wrap">
+      <form class="assess-card reveal in" id="hsiForm" action="https://formspree.io/f/xyegvkga" method="POST" onsubmit="return handleAssessSubmit(event);" novalidate style="max-width:900px;">
+        <div id="hsiFields">
+          <h2>HealthStyle Index (HSI)</h2>
+          <div class="assess-directions"><strong>Directions:</strong> For each health indicator, choose the answer that best describes you.</div>
+
+          <div class="assess-client-fields">
+            <div class="field">
+              <label for="hsi_name">Name</label>
+              <input id="hsi_name" name="name" type="text" placeholder="Your full name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="hsi_email">Email</label>
+              <input id="hsi_email" name="email" type="email" placeholder="you@email.com" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div id="hsiQuestions"><!-- rendered by JS from HSI_ITEMS --></div>
+
+          <!-- hidden fields carrying the computed score to Jamie -->
+          <input type="hidden" name="score_weighted" id="score_weighted">
+          <input type="hidden" name="score_category" id="score_category">
+          <input type="hidden" name="score_hsi_index" id="score_hsi_index">
+          <input type="hidden" name="score_improvement_opportunities" id="score_improvement_opportunities">
+          <input type="hidden" name="_subject" value="HealthStyle Index Assessment — Intercede Health">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+          <button type="submit" class="btn btn-primary" id="assessSubmitBtn">Submit Assessment</button>
+          <p class="field-error" id="assessError">Something went wrong sending your assessment — please call us at <a href="tel:19417205954">941-720-5954</a> or try again.</p>
+        </div>
+
+        <div class="form-success" id="assessSuccess">
+          <div class="check">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#5a9a1f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Assessment submitted</h3>
+          <p id="assessSummary">Thanks — your responses have been sent to Jamie.</p>
+          <div class="assess-result show" id="resultBox" style="text-align:left;margin-top:22px;">
+            <div class="score-row">
+              <div><strong id="resWeighted">–</strong><span>Weighted Score /100</span></div>
+              <div><strong id="resHsi">–</strong><span>HealthStyle Index /28</span></div>
+              <div><strong id="resOpp">–</strong><span>Improvement Opportunities</span></div>
+            </div>
+            <p id="resCategoryLine" style="margin-top:6px;"></p>
+            <p style="margin-top:10px;">A weighted score of 60&ndash;79 is good; 80&ndash;100 is excellent. Your HealthStyle Index score is the number of "best practice" answers you selected out of 28 &mdash; the higher the better. Your Improvement Opportunities count is how many indicators still have room to grow.</p>
+          </div>
+        </div>
+      </form>
+
+      <p style="max-width:900px;margin:26px auto 0;font-size:12px;color:var(--ink-soft);line-height:1.6;">
+        Source: HealthStyle Index (HSI), based on Healthy People goals. &copy; 2001 PreMedix LLC. Used with permission.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-wave">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C 240,60 480,0 720,25 C 960,50 1200,5 1440,30 L1440,0 L0,0 Z" style="fill:var(--cream);"/></svg>
+  </div>
+  <div class="wrap foot-main">
+    <div>
+      <div class="foot-brand">
+        <img src="logo.png" width="41" height="38" alt="Intercede Health logo">
+        <span>Intercede Health</span>
+      </div>
+      <p>Registered-Nurse-led home health care and health coaching, serving the Manatee–Sarasota area with proactive, affordable, dignified care.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Explore</h5>
+      <a href="index.html#home">Home</a>
+      <a href="index.html#health-coaching">Health Coaching</a>
+      <a href="index.html#employers">For Employers</a>
+      <a href="index.html#in-home-care">In-Home Care</a>
+      <a href="index.html#about">About Us</a>
+      <a href="assessments.html">Client Assessments</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="foot-col">
+      <h5>Connect</h5>
+      <a href="tel:19417205954">941-720-5954</a>
+      <a href="https://www.facebook.com/1221563171030757" target="_blank" rel="noopener">Facebook</a>
+      <a href="index.html#contact">Book a Consultation</a>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 Intercede Health LLC. All rights reserved.</span>
+    <span>Manatee–Sarasota, Florida</span>
+  </div>
+</footer>
+
+<script src="assets/site-common.js"></script>
+<script>
+  // Transcribed from the HealthStyle Index (HSI) paper assessment.
+  // Each item: indicator name, the question text, and its A/B/C options with point values.
+  const HSI_ITEMS = [
+    { name:"Physical Activity", q:"Number of days you get 30+ min. of moderate to vigorous activity?", opts:[
+      {p:0,t:"No regular physical activity"},{p:4,t:"2-3 days/week"},{p:10,t:"4-7 days/week"}] },
+    { name:"Strength Training", q:"Number of 15+ min sessions/week?", opts:[
+      {p:0,t:"No strength training"},{p:1,t:"Once/week"},{p:3,t:"Twice/week or more"}] },
+    { name:"Body Weight", q:"BMI value (see BMI chart).", opts:[
+      {p:0,t:"BMI 30+"},{p:5,t:"BMI 25-29.9"},{p:10,t:"BMI less than 25"}] },
+    { name:"Fruits/Vegetables", q:"# serv/day? 1 serv = 1 med. fruit, 1 C fresh, 1/2 C chopped, 6 oz. juice", opts:[
+      {p:0,t:"0-2 serv/day"},{p:2,t:"3-4 serv/day"},{p:5,t:"5-9 serv/day"}] },
+    { name:"High Sat. Fat", q:"How often do you eat tacos, fried chicken, steak, fries, rich desserts, hamburgers, hot dogs, cheese pizza?", opts:[
+      {p:0,t:"Often, or most days"},{p:1,t:"Occasionally, 2-3 times/week"},{p:4,t:"Seldom or never eat these foods"}] },
+    { name:"Nuts/Seeds", q:"# serv/week? 1 serving = 1 oz or 2T nut butter", opts:[
+      {p:0,t:"Seldom/never eat nuts"},{p:2,t:"2-4 serv/week"},{p:4,t:"5+ serv/week"}] },
+    { name:"Whole Grains", q:"# serv/day? 1 slice bread, 2/3 C dry cereal, 1/2 C cooked oats or brown rice", opts:[
+      {p:0,t:"Seldom eat whole grains"},{p:1,t:"1-2 serv/day"},{p:3,t:"3 serv/day"}] },
+    { name:"Breakfast", q:"How often do you eat breakfast (more than just coffee and a roll)?", opts:[
+      {p:0,t:"Seldom or never"},{p:1,t:"3-4 days/week"},{p:2,t:"Daily or nearly so"}] },
+    { name:"Refined Food/Sugar", q:"How often do you eat soda pop, pastry, cookies, chips, or candy?", opts:[
+      {p:0,t:"2+ times daily"},{p:1,t:"No more than once/day"},{p:2,t:"Limit to a few times/week"}] },
+    { name:"Legumes", q:"# serv/week? 1 serving = 1/2 C peas, beans, tofu, lentils, etc.", opts:[
+      {p:0,t:"None"},{p:1,t:"1-2 serv/week"},{p:2,t:"3+ serv/week"}] },
+    { name:"High Calcium Foods", q:"# serv/day? 1 serving = 1 C milk, cheese, yogurt, broccoli or collard greens, 1/2 C firm tofu, 1 C Ca fortified OJ", opts:[
+      {p:0,t:"less than one/day"},{p:1,t:"at least one/day"},{p:2,t:"two or more/day"}] },
+    { name:"Salt", q:"Do you add salt to food and/or eat salty foods?", opts:[
+      {p:0,t:"Frequently"},{p:1,t:"Occasionally"},{p:2,t:"Seldom, limit salt and salty food"}] },
+    { name:"Water", q:"How many glasses (8 oz.) of water do you drink daily?", opts:[
+      {p:0,t:"0-3 glasses/day"},{p:1,t:"4-5 glasses/day"},{p:2,t:"6-8+ glasses/day"}] },
+    { name:"Smoking", q:"Do you smoke or are you a nonsmoker often exposed to secondhand smoke?", opts:[
+      {p:0,t:"Currently smoke"},{p:4,t:"Frequent secondhand smoke"},{p:10,t:"Nonsmoker"}] },
+    { name:"Sun", q:"Are you careful to avoid excess sun by wearing protective clothing/sun screen?", opts:[
+      {p:0,t:"Sometimes"},{p:1,t:"Most of the time"},{p:2,t:"Always"}] },
+    { name:"Alcohol", q:"Number drinks/week (1 drink = beer 12 oz., wine 3.5 oz., or liquor 1.5 oz.)", opts:[
+      {p:0,t:"3-5 or more/day"},{p:3,t:"Not more than 1-2/day"},{p:4,t:"Seldom or never drink"}] },
+    { name:"Happiness/Mental Health", q:"During the past month, how happy have you been?", opts:[
+      {p:0,t:"Very unhappy"},{p:1,t:"Pretty happy"},{p:3,t:"Very happy"}] },
+    { name:"Stress", q:"How well are you coping with stress and pressures in your life?", opts:[
+      {p:0,t:"Very stressed out, anxious, or angry, not coping"},{p:1,t:"Often stressed or anxious, not coping too well"},{p:3,t:"Sometimes stressed but coping well"}] },
+    { name:"Social Support/Contact", q:"How is your social support/contact with family and friends?", opts:[
+      {p:0,t:"Little/no contact or support, often lonely"},{p:1,t:"Occasional contact, limited social support"},{p:3,t:"Frequent contact, good social support"}] },
+    { name:"Community", q:"Do you participate regularly in a faith community or other social group?", opts:[
+      {p:0,t:"Don't participate in any faith/social group"},{p:1,t:"Occasionally participate in a faith/social group"},{p:3,t:"Participate regularly in a faith/social group"}] },
+    { name:"Rest", q:"Number of hours of sleep you usually get each day?", opts:[
+      {p:0,t:"Less than 6 hours"},{p:1,t:"6-6.9 hours"},{p:4,t:"7-8 or more hours"}] },
+    { name:"Safe Sex", q:"Do you take precautions to avoid sexually transmitted disease (STDs) and unwanted pregnancy?", opts:[
+      {p:0,t:"Multiple sex partners and don't always use protection"},{p:1,t:"Multiple sex partners but always use protection"},{p:3,t:"Limit relations to one faithful partner or abstain"}] },
+    { name:"Seat Belts", q:"How often do you wear your seat belts when riding in a car?", opts:[
+      {p:0,t:"Seldom or never"},{p:1,t:"Often"},{p:2,t:"Always"}] },
+    { name:"Helmet", q:"Do you wear protective gear if biking or in-line skating?", opts:[
+      {p:0,t:"Seldom or never"},{p:1,t:"Often"},{p:2,t:"Always"}] },
+    { name:"Smoke Alarm", q:"Do you have a working smoke alarm in your home?", opts:[
+      {p:0,t:"No or not sure"},{p:1,t:"Yes, but not tested recently"},{p:2,t:"Yes, and I know it works"}] },
+    { name:"Drink and Drive", q:"Ever drive after drinking or ride with a driver who's been drinking?", opts:[
+      {p:0,t:"Frequently"},{p:0,t:"Once in a while"},{p:2,t:"Never"}] },
+    { name:"Access", q:"Do you have a source for ongoing health/medical care (health plan, primary care doctor, etc.)?", opts:[
+      {p:0,t:"Not presently"},{p:1,t:"Yes, but don't have a primary physician yet"},{p:2,t:"Yes, plus a good working relationship with my doctor"}] },
+    { name:"Preventive Exams/Immunizations", q:"Are all recommended exams and immunizations current (see age/gender specific list)?", opts:[
+      {p:0,t:"No, seldom get health checkups"},{p:2,t:"Not sure but have had a health checkup in last 2 yrs"},{p:4,t:"Yes, get regular checkups and all preventive exams"}] }
+  ];
+
+  const container = document.getElementById('hsiQuestions');
+  HSI_ITEMS.forEach((item, idx) => {
+    const num = idx + 1;
+    const block = document.createElement('div');
+    block.className = 'q-block';
+    block.innerHTML = `
+      <div class="q-text"><span class="q-num">${num}</span><span><strong>${item.name}.</strong> ${item.q}</span></div>
+      <div class="opt-list">
+        ${item.opts.map((o, i) => `
+          <label class="opt-card">
+            <input type="radio" name="q${num}" value="${o.p}" ${i === 0 ? 'required' : ''}>
+            <span class="opt-row"><span class="opt-pts">${o.p}</span> ${o.t}</span>
+          </label>
+        `).join('')}
+      </div>
+    `;
+    container.appendChild(block);
+  });
+
+  function computeScore(form) {
+    let weighted = 0, cCount = 0, abCount = 0;
+    for (let i = 1; i <= HSI_ITEMS.length; i++) {
+      const inputs = form.querySelectorAll(`input[name="q${i}"]`);
+      const checked = form.querySelector(`input[name="q${i}"]:checked`);
+      if (!checked) return null;
+      weighted += Number(checked.value);
+      const optionIndex = Array.from(inputs).indexOf(checked);
+      if (optionIndex === 2) cCount++; else abCount++; // index 2 = column C
+    }
+    let category = null;
+    if (weighted >= 80) category = 'Excellent (80–100)';
+    else if (weighted >= 60) category = 'Good (60–79)';
+    return { weighted, cCount, abCount, category };
+  }
+
+  function handleAssessSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return false;
+    }
+
+    const result = computeScore(form);
+    if (!result) {
+      alert('Please answer every question before submitting.');
+      return false;
+    }
+
+    document.getElementById('score_weighted').value = result.weighted;
+    document.getElementById('score_category').value = result.category || '';
+    document.getElementById('score_hsi_index').value = result.cCount;
+    document.getElementById('score_improvement_opportunities').value = result.abCount;
+
+    const name = document.getElementById('hsi_name').value.trim();
+    const btn = document.getElementById('assessSubmitBtn');
+    const errorNote = document.getElementById('assessError');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    if (errorNote) errorNote.style.display = 'none';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error('submission failed');
+
+        document.getElementById('assessSummary').textContent =
+          `Thanks, ${name}! Your responses have been sent to Jamie.`;
+        document.getElementById('resWeighted').textContent = result.weighted;
+        document.getElementById('resHsi').textContent = result.cCount;
+        document.getElementById('resOpp').textContent = result.abCount;
+        document.getElementById('resCategoryLine').textContent = result.category
+          ? `Your weighted score category: ${result.category}`
+          : 'Your weighted score is below the 60-point "good health" threshold — Jamie can help you build a plan to improve it.';
+
+        document.getElementById('hsiFields').style.display = 'none';
+        document.getElementById('assessSuccess').classList.add('show');
+      })
+      .catch(() => {
+        btn.disabled = false;
+        btn.textContent = 'Submit Assessment';
+        if (errorNote) {
+          errorNote.style.display = 'block';
+        } else {
+          alert('Something went wrong sending your assessment — please call us at 941-720-5954 or try again.');
+        }
+      });
+
+    return false;
+  }
+</script>
+</body>
+</html>
